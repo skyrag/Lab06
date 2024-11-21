@@ -1,6 +1,6 @@
+package calculator;
 
-
-public class Stack <T> {
+public class StackCalc<T> {
     private Element<T> head;
 
     public T Pop() {
