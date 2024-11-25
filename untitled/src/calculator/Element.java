@@ -20,4 +20,9 @@ public class Element<T> {
     public void setNext(Element<T> next) {
         this.next = next;
     }
+
+    @Override
+    public String toString() {
+        return value.toString();
+    }
 }

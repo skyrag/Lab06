@@ -29,13 +29,13 @@ public class StackCalc<T> {
         return count;
     }
 
-    public T[] toArray() {
+    public String[] toArray() {
         Iterator<T> it = iterator();
         int size = size();
-        T[] array = (T[]) new Object[size];
+        String[] array = new String[size];
         int count = 0;
         while(it.hasNext()){
-            array[count] = it.current();
+            array[count] = it.current().toString();
             count++;
             it.next();
         }

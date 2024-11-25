@@ -1,10 +1,15 @@
 package calculator;
 
 public class State {
-    StackCalc <Integer> a;
+    public StackCalc <Double> stack;
+    public String currentValue;
+    public String memory;
+    public Operator lastOperator;
 
     public State() {
-        this.a = new StackCalc<>();
+        this.stack = new StackCalc<>();
+        this.currentValue = null;
+        this.memory = null;
     }
 
 

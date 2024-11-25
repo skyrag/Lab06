@@ -2,6 +2,6 @@ package calculator;
 
 abstract class Operator
 {
-  protected StackCalc<Object> stack;
+  protected State state;
   abstract void execute();
 }
