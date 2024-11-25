@@ -8,7 +8,7 @@ public class OpMs extends Operator{
     //TO-DO MS (memory store) stocke en mémoire la valeur courante.
     @Override
     public void execute(){
-
+        state.memory = state.currentValue;
         state.lastOperator = this;
     }
 

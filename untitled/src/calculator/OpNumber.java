@@ -10,7 +10,7 @@ public class OpNumber extends Operator{
 
     @Override
     public void execute(){
-        if (state.lastOperator instanceof OpNumber || state.lastOperator instanceof OpComma || state.lastOperator instanceof OpEnt ) {
+        if (state.lastOperator instanceof OpNumber || state.lastOperator instanceof OpComma || state.lastOperator instanceof OpBackspace) {
             state.currentValue = state.currentValue + number;
         } else {
             if (state.currentValue != null) {

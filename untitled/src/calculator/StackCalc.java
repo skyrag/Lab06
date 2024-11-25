@@ -31,8 +31,7 @@ public class StackCalc<T> {
 
     public String[] toArray() {
         Iterator<T> it = iterator();
-        int size = size();
-        String[] array = new String[size];
+        String[] array = new String[size()];
         int count = 0;
         while(it.hasNext()){
             array[count] = it.current().toString();
@@ -41,5 +40,23 @@ public class StackCalc<T> {
         }
 
         return array;
+    }
+
+    public void COrCe(boolean isC){
+        Iterator<T> it = iterator();
+        Element<T> last = head;
+        while(it.hasNext()){
+            if(isC){
+                Pop();
+            } else {
+                if (last.getNext().getValue().equals(Double.NaN)){
+                    last.setNext(last.getNext().getNext());
+                } else {
+                    last = last.getNext();
+                }
+            }
+            it.next();
+        }
+
     }
 }
