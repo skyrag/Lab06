@@ -26,7 +26,7 @@ public class OpBackspace extends Operator {
      */
     @Override
     public void execute() {
-        if (state.currentValue != null && !state.currentValue.contains("#")) {
+        if (state.currentValue != null && !state.currentValue.contains("#") && !state.currentValue.isEmpty() && !Double.isInfinite(Double.parseDouble(state.currentValue))) {
             state.currentValue = state.currentValue.substring(0, state.currentValue.length() - 1);
         }
     }

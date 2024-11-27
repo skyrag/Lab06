@@ -31,11 +31,15 @@ public class OpNumber extends Operator {
     @Override
     public void execute() {
         if (state.modeEdition) {
-            if (state.currentValue != null) {
+            if (state.currentValue != null && !state.currentValue.isEmpty()) {
                 state.currentValue = state.currentValue + number;
             } else {
                 state.currentValue = Integer.toString(number);
             }
+        } else {
+            state.stack.Push(Double.valueOf(state.currentValue));
+            state.currentValue = Integer.toString(number);
+            state.modeEdition = true;
         }
     }
 }
