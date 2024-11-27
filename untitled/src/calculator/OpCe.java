@@ -14,8 +14,7 @@ public class OpCe extends Operator{
     @Override
     void execute() {
         state.stack.COrCe(false);
-        needReset.setText("0");
         state.currentValue = null;
-        state.lastOperator = this;
+        state.modeEdition = true;
     }
 }

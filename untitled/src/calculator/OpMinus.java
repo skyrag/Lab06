@@ -1,6 +1,6 @@
 package calculator;
 
-public class OpMinus extends Operator {
+public class OpMinus extends OpErrorStack {
     public OpMinus(State state) {
         this.state = state;
     }
@@ -8,7 +8,9 @@ public class OpMinus extends Operator {
     // this boutton subtract the current value to the head of the stack
     @Override
     public void execute(){
-        state.currentValue = Double.toString(state.stack.Pop() - Double.parseDouble(state.currentValue));
-        state.lastOperator = this;
+        super.execute();
+        if (!state.currentValue.contains("#")){
+            state.currentValue = Double.toString(state.stack.Pop() - Double.parseDouble(state.currentValue));
+        }
     }
 }

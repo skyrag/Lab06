@@ -10,14 +10,13 @@ public class OpNumber extends Operator{
 
     @Override
     public void execute(){
-        if (state.lastOperator instanceof OpNumber || state.lastOperator instanceof OpComma || state.lastOperator instanceof OpBackspace) {
-            state.currentValue = state.currentValue + number;
-        } else {
-            if (state.currentValue != null) {
-                state.stack.Push(Double.parseDouble(state.currentValue));
+        if (state.modeEdition) {
+            if (state.currentValue != null){
+                state.currentValue = state.currentValue + number;
+            } else {
+                state.currentValue = Integer.toString(number);
             }
-            state.currentValue = Integer.toString(number);
+
         }
-        state.lastOperator = this;
     }
 }

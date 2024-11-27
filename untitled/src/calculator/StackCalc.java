@@ -19,7 +19,7 @@ public class StackCalc<T> {
         return new Iterator<>(head);
     }
 
-    private int size(){
+    public int size(){
         Iterator<T> iter = iterator();
         int count = 0;
         while(iter.hasNext()){

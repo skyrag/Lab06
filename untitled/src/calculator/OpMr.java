@@ -8,7 +8,9 @@ public class OpMr extends Operator{
     //TO-DO MR (memory recall) permet de la récupérer
     @Override
     public void execute(){
-        state.currentValue = state.memory;
-        state.lastOperator = this;
+        if (!state.currentValue.contains("#")){
+            state.currentValue = state.memory;
+            state.modeEdition = true;
+        }
     }
 }
