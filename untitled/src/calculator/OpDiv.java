@@ -29,12 +29,14 @@ public class OpDiv extends OpErrorStack {
     @Override
     public void execute() {
         super.execute();
-        double temp = state.stack.Pop();
-        if (Double.parseDouble(state.currentValue) == 0.0 && temp == 0.0) {
-            state.currentValue = "# error #";
-        }
-        if (!state.currentValue.contains("#")) {
-            state.currentValue = Double.toString(temp / Double.parseDouble(state.currentValue));
+        if (!state.currentValue.contains("#")){
+            double temp = state.stack.Pop();
+            if (Double.parseDouble(state.currentValue) == 0.0 && temp == 0.0) {
+                state.currentValue = "# error #";
+            }
+            if (!state.currentValue.contains("#")) {
+                state.currentValue = Double.toString(temp / Double.parseDouble(state.currentValue));
+            }
         }
     }
 }

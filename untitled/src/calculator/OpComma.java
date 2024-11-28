@@ -27,7 +27,7 @@ public class OpComma extends Operator {
      */
     @Override
     public void execute() {
-        if (state.currentValue != null) {
+        if (state.currentValue != null && !Double.isInfinite(Double.parseDouble(state.currentValue))) {
             if (!state.currentValue.contains(".") || state.modeEdition) {
                 state.currentValue = state.currentValue.concat(".");
             }
