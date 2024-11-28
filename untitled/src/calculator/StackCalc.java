@@ -11,6 +11,10 @@ package calculator;
 public class StackCalc<T> {
     private Element<T> head;
 
+    public StackCalc() {
+        head = null;
+    }
+
     /**
      * Supprime et retourne le premier élément de la pile.
      *
